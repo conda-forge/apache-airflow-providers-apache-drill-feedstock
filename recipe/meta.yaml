@@ -1,13 +1,13 @@
 {% set name = "apache-airflow-providers-apache-drill" %}
-{% set version = "2.5.0" %}
+{% set version = "2.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-apache-drill-{{ version }}.tar.gz
-  sha256: 0cc540f8068f73ccd2f1a31edc880bf6c21ed6a25cc292bb16feed5b9fdd5727
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: d52ea15c5b88ad6004ac4e700531af7355cfda5253810c708d24db8f2cd86f1a
 
 build:
   noarch: python
@@ -16,31 +16,28 @@ build:
 
 requirements:
   host:
-    - python >=3.8
-    - setuptools >=67.2.0,<68.0.0
+    - python >=3.8,<4.dev0
+    - flit-core >=3.2,<4
     - pip
   run:
     - python >=3.8
     - apache-airflow-providers-common-sql >=1.3.1
-    - apache-airflow >=2.5.0
+    - apache-airflow >=2.6.0
     - sqlalchemy-drill >=1.1.0
 
 test:
   imports:
     - airflow.providers.apache.drill
-    - airflow.providers.apache.drill.hooks
   commands:
     - pip check
   requires:
     - pip
 
 about:
-  home: https://airflow.apache.org/
-  summary: Provider for Apache Airflow. Implements apache-airflow-providers-apache-drill package
+  home: https://github.com/apache/airflow/
+  summary: Provider package apache-airflow-providers-apache-drill for Apache Airflow
   license: Apache-2.0
-  license_file:
-    - LICENSE
-    - NOTICE
+  license_file: airflow/providers/apache/drill/LICENSE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-apache-drill/stable/index.html
   dev_url: https://github.com/apache/airflow/
