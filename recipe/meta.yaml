@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apache-drill" %}
-{% set version = "2.7.1" %}
+{% set version = "2.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_apache_drill-{{ version }}.tar.gz
-  sha256: 17e5231b8ea6a91f8733c3be921a4a11226c7db0be1ae86e8fd6388be9e682e9
+  sha256: 4762afcf482569efc069536a457b71606365a1f8c6ab320e0323c078e71f3523
 
 build:
   noarch: python
