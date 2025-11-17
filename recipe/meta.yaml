@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-apache-drill" %}
-{% set version = "3.1.3" %}
+{% set version = "3.1.4" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_apache_drill-{{ version }}.tar.gz
-  sha256: 24be4feb9ce92dca44f34216a95a2d8513d4526c67ac4916e37c5f677299e686
+  sha256: 2d9a6c1805bee303592331e120dd243b5a23db405e4c0fc6e1cdb297a38aa902
 
 build:
   noarch: python
@@ -21,6 +21,7 @@ requirements:
     - flit-core ==3.12.0
     - pip
   run:
+    - apache-airflow-providers-common-compat >=1.8.0
     - python >={{ python_min }}
     - apache-airflow >=2.10.0
     - apache-airflow-providers-common-sql >=1.26.0
