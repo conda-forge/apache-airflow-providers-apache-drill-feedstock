@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-apache-drill
-  version: "3.2.1"
+  version: "3.3.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_apache_drill-${{ version }}.tar.gz
-  sha256: 807507db20f343d5da0269cb546535408ef3d6d169947f016c03d8e1d2820186
+  sha256: 3cffeebf2b2fcb2e0e9f02e4c05694b3908c699c4ddb92752d6da4caca7a4fc8
 
 build:
   noarch: python
@@ -23,14 +23,14 @@ requirements:
   run:
     - python >=${{ python_min }}
     - apache-airflow >=2.11.0
-    - apache-airflow-providers-common-sql >=1.26.0
+    - apache-airflow-providers-common-sql >=1.32.0
     - apache-airflow-providers-common-compat >=1.8.0
     - sqlalchemy-drill >=1.1.0,!=1.1.6,!=1.1.7
 
 tests:
   - python:
       imports:
-      - airflow.providers.apache.drill
+        - airflow.providers.apache.drill
       pip_check: true
       python_version: ${{ python_min }}.*
 
