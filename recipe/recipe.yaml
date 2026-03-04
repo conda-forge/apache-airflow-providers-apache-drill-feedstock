@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-apache-drill
-  version: 3.3.0
+  version: "3.3.0"
 
 package:
   name: ${{ name|lower }}
@@ -26,6 +26,7 @@ requirements:
     - apache-airflow-providers-common-sql >=1.32.0
     - apache-airflow-providers-common-compat >=1.8.0
     - sqlalchemy-drill >=1.1.0,!=1.1.6,!=1.1.7
+
 tests:
   - python:
       imports:
