@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-apache-drill
-  version: "3.3.2"
+  version: "3.3.3"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_apache_drill-${{ version }}.tar.gz
-  sha256: f2b28fa0a91d37b7cfae552d6f5bc12902d59a54146aff7f3048be6c4770defb
+  sha256: 7d03a97d22c22bb8c195863c65af931ab4e1144586a4ce740125bee6b82331df
 
 build:
   noarch: python
